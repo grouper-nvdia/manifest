@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="git://github.com" />
+
+  <default revision="refs/heads/master"
+           remote="github"
+           sync-c="true"
+           sync-j="4" />
+
+  <project path="build" name="grouper-nvidia/build" >
+    <copyfile src="main.mk" dest="Makefile" />
+  </project>
+
+  <project path="anykernel" name="grouper-nvidia/anykernel" remote="github" />
+  <project path="kernel/nv-3.1" name="grouper-nvidia/nv-3.1_kernel" revision="android-tegra3-grouper-nv3.1" remote="github" />
+  <project path="prebuilt" name="grouper-nvidia/prebuilt" remote="github" />
+
+</manifest>
